@@ -1,0 +1,34 @@
+{% extends 'investimentos/base.html' %}
+{% block conteudo%}
+{% load static %}
+<style>
+    body {
+        background-image: url("{% static 'img/plano_fundo.jpg' %}");
+        background-size: 100% 100%; /* Para cobrir toda a área do corpo */
+        background-position: center; /* Para centralizar a imagem */
+        background-repeat: no-repeat;
+        height: 100vh;
+        margin: 0;
+    }
+</style>
+<h1 style="text-align: center; color: white;
+padding: 10px;">Detalhe do Investimento</h1>
+<div class="container">
+    <table class="table table-hover table-bordered" style="background-color: lightgray;">
+        <tr style="font-size: 20px;">
+            <th>Id</th>
+            <th>Investimento</th>
+            <th>Valor</th>
+            <th>Data</th>
+            <th>Pago</th>
+        </tr>
+        <tr>
+            <td>{{dados.id}}</td>
+            <td>{{dados.investimento}}</td>
+            <td>{{dados.valor}}</td>
+            <td>{{dados.data}}</td>
+            <td>{{dados.pago}}</td>
+        </tr>
+    </table>
+</div>
+{% endblock %}

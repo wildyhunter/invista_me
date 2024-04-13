@@ -1,0 +1,23 @@
+{% extends 'investimentos/base.html' %}
+{% block conteudo %}
+{% load static %}
+<style>
+    body {
+        background-image: url("{% static 'img/plano_fundo.jpg' %}");
+        background-size: 100% 100%; /* Para cobrir toda a área do corpo */
+        background-position: center; /* Para centralizar a imagem */
+        background-repeat: no-repeat;
+        height: 100vh;
+        margin: 0;
+    }
+</style>
+<div class="container">
+    <form method='POST'>
+        {% csrf_token %}
+        <h1 style="text-align: center; padding: 10px;
+         color: white;"> Confirmar exclusão do {{item.investimento}}</h1>
+        <button class="btn btn-default"><a href="{% url 'investimentos' %}">Cancelar</a></button>
+        <button class="btn btn-danger" type="submit">Confirmar</button>
+    </form>
+</div>
+{% endblock %}

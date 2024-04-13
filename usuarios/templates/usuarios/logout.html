@@ -1,0 +1,22 @@
+{% extends 'investimentos/base.html' %}
+{% load crispy_forms_tags%}
+{% block conteudo%}
+{% load static %}
+<style>
+    body {
+        background-image: url("{% static 'img/plano_fundo.jpg' %}");
+        background-size: 100% 100%; /* Para cobrir toda a área do corpo */
+        background-position: center; /* Para centralizar a imagem */
+        background-repeat: no-repeat;
+        height: 100vh;
+        margin: 0;
+    }
+</style>
+<div class="container" style="padding: 30px; color: white;">
+    <h1>Você saiu do Sistema</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <a href="{% url 'login' %}">Fazer login novamente.</a>
+    </form>
+</div>
+{% endblock %}
